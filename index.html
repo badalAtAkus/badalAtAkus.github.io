@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello Everyone!!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .center { 
+    height: 100vh;
+    position: relative;
+    border: 3px solid maroon; 
+  }
+
+  .center p {
+  	font-size:50px;
+    font-weight:bolder;
+    text-transform:uppercase;
+    color:green;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align:center;
+  }
+  span{
+  color:blue;
+  }
+  /* Media Query */
+   /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .center p {
+      font-size: 15px;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .center p {
+      font-size: 20px;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+  .center p {
+      font-size: 30px;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+  .center p {
+      font-size: 50px;
+    }
+  }
+	</style>
+</head>
+<body class="center">
+<p id="today"></p>
+<script>
+myTimer();
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const today = new Date();
+  var dd = today.getDate(); 
+  var mm = today.getMonth()+1; 
+  var yyyy = today.getFullYear(); 
+  var hour = today.getHours();
+  var welcome;
+  if (hour < 12) {  
+      welcome = "good morning";  
+    } else if (hour < 17) {  
+      welcome = "good afternoon";  
+    } else {  
+      welcome = "good evening";  
+    }  
+  document.getElementById("today").innerHTML = dd + "/" + mm + "/" + yyyy + " " + today.toLocaleTimeString()+"<br><span>"+welcome+"</span>";
+}
+</script>
+
+</body>
+</html>
