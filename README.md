@@ -1,1 +1,1 @@
-[badalAtAkus.github.io](badalAtAkus.github.io)
+[badalAtAkus.github.io](https://badalAtAkus.github.io)
